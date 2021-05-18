@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: tar -zcvf TA-efa-ai.tgz TA-efa-ai
+    - run: tar -zcvf TA-cisco-wlc.tgz TA-cisco-wlc
     - name: Create Release
       uses: actions/create-release@v1
       id: create_release
@@ -26,6 +26,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./TA-efa-ai.tgz
-        asset_name: TA-efa-ai.tgz
+        asset_path: ./TA-cisco-wlc.tgz
+        asset_name: TA-cisco-wlc.tgz
         asset_content_type: application/tgz  
